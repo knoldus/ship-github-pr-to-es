@@ -4,7 +4,7 @@
 getPrResponse=$(curl -s \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  "https://api.github.com/repos/OWNER/REPO//pulls?state=all&per_page=100&page=1")
+  "https://api.github.com/repos/OWNER/REPO/pulls?state=all&per_page=100&page=1")
 
 # get number of PR
 totalPR=$(echo "$getPrResponse" |
@@ -95,7 +95,7 @@ for ((count = 0; count < $loopCount; count++)); do
       tr -d '"')
 
     # send data to es
-    curl -X POST "$ES_URL/github_pr/pull_request" \
+    curl -X POST "$ES_URL/<index>/<type>" \
       -H "Content-Type: application/json" \
       -d "{ \"pr_number\" : \"$PrNumber\",
             \"pr_url\" : \"$PrHtmlUrl\",
