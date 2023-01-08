@@ -1,0 +1,1 @@
+In this repository contains a shell script to ship GitHub PR details to Elastic Search.
