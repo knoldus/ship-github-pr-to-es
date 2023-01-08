@@ -4,7 +4,7 @@ This repository contains a shell script to ship GitHub PR details to Elastic Sea
 
 **Files:** 
 ```
-      1. getGithubPR.sh
+      1. getGithubPR.shq
 ```
 
 ## How to run the above scripts
